@@ -15,7 +15,7 @@ def preprocess_input(df):
         with open('training_columns.txt', 'r') as f:
             training_columns = f.read().split(',')
     except Exception as e:
-        raise ValueError(f"فشل تحميل أعمدة التدريب: {e}")
+        raise ValueError(f"Failed to load training columns: {e}")
 
     final_data = df.reindex(columns=training_columns, fill_value=0)
 
